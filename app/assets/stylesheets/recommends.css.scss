@@ -1,0 +1,80 @@
+.container {
+  height: 100%;
+  background-color: #f1f1f1;
+  .home-featured-content {
+    height: 420px;
+    background-color: white;
+  }//上部の特集のcssここまで
+  .home-main {
+    padding: 10px 0;
+    width: 960px;
+    margin: 0 auto;
+    .home-main__tab {
+      border-bottom: 1px solid #ccc;
+      height: 42px;
+      margin: 15px, 0;
+      background-color: white;
+    }
+    .home-main__container {
+      background-color: white;
+      .home-main__filter {
+        width: 100%;
+      }
+      .home-main__recommend {
+        width: 298px;
+        border-bottom: 5px solid #fcb753;
+        .home-main__recommend--thumb {
+          height: 200px;
+          width: 298px;
+          background-color: green;
+        }
+        .home-main__recommend--description {
+          zoom: 1;
+          display: block;
+          padding: 15px;
+          position: relative;
+          background-color: blue;
+          .home-main__recommend--description-user {
+            height: 36px;
+            width: 30px;
+            margin-right: 10px;
+            float: left;
+            background-color: red;
+            position: absolute;
+          }
+          .home-main__recommend--description-title {
+            float: right;
+            width: 228px;
+            color: #666;
+            height: 40px;
+            overflow: hidden;
+            background-color: yellow;
+
+          }
+          .clearfix {
+            display: block;
+            clear: both;
+          }
+          .home-main__recommend--description-tag {
+            display: inline-block;
+            padding: 5px 0 7px;
+            color: #ccc;
+            font-size:  12px;
+            background-color: black;
+          }
+          .home-main__recommend--description-fav {
+            color: #ccc;
+            padding: 5px 0 7px;
+            float: right;
+            background-color: white;
+          }
+          .clearfix {
+            display: block;
+            clear: both;
+          }
+        }
+      }
+    }
+  }
+}
+
