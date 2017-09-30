@@ -1,10 +1,12 @@
 .container {
   height: 100%;
   background-color: #f1f1f1;
+  //上部の特集欄
   .home-featured-content {
     height: 420px;
     background-color: white;
-  }//上部の特集のcssここまで
+  }
+  //ここからメイン
   .home-main {
     padding: 10px 0;
     width: 960px;
@@ -17,9 +19,11 @@
     }
     .home-main__container {
       background-color: white;
+      //フィルター部css
       .home-main__filter {
         width: 100%;
       }
+      //１投稿のcss
       .home-main__recommend {
         width: 298px;
         border-bottom: 5px solid #fcb753;
