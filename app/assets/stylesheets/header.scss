@@ -103,6 +103,9 @@ ul.user-dropdown {
   display: none;
   width: 180px;
   border: 1px solid #ccc;
+  position: relative;
+  z-index: 3;
+
 }
 li.user-dropdown-list {
   clear: both;
