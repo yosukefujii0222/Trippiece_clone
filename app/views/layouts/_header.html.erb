@@ -2,7 +2,7 @@
   <div class="header-default__container">
     <!-- ここからロゴ -->
     <div class="header-default-logo">
-      <a class="header-default-logo-icon" href="">
+      <a class="header-default-logo-icon" href="/">
         <i class="fa fa-hand-spock-o">めこぴ</i>
       </a>
     </div>
@@ -31,20 +31,19 @@
         </li>
         <!-- ユーザー機能一覧 -->
         <li class="header-default-menu-item__user">
-          <i class="fa fa-user-circle" id="user-menu"><span>ユーザー</span>
-            <ul class="user-dropdown">
-              <li class="user-dropdown-list"><a href="#">プロフィール</a></li>
-              <li class="user-dropdown-list"><a href="#">設定</a></li>
-              <li class="user-dropdown-list"><a href="#">ログアウト</a></li>
-              <li class="user-dropdown-list"><a href="#">○○からのお知らせ</a></li>
-              <li class="user-dropdown-list"><a href="#">お問い合わせ・通報</a></li>
-              <li class="user-dropdown-list"><a href="#">ヘルプ</a></li>
-            </ul>
-          </i>
+          <%= image_tag  current_user.avatar.url(:thumb) %><span>ユーザー</span>
+          <ul class="user-dropdown">
+            <li class="user-dropdown-list"><a href="/users/<%= current_user.id %>">プロフィール</a></li>
+            <li class="user-dropdown-list"><a href="#">設定</a></li>
+            <li class="user-dropdown-list"><a href="#">ログアウト</a></li>
+            <li class="user-dropdown-list"><a href="#">○○からのお知らせ</a></li>
+            <li class="user-dropdown-list"><a href="#">お問い合わせ・通報</a></li>
+            <li class="user-dropdown-list"><a href="#">ヘルプ</a></li>
+          </ul>
         </li>
       </ul>
       <!-- ナブバー/新規レコメンド作成ボタン -->
-      <%= link_to "新規作成", "new_recommend_path", class: "new-recommend" %>
+      <%= link_to "新規作成", "/recommends/new", class: "new-recommend" %>
     </nav>
   </div>
 </header>
