@@ -1,6 +1,13 @@
 @import "./reset";
+@import "./bootstrap-sprockets";
+@import "./bootstrap";
+@import "./bootstrap-tagsinput";
+@import "./variable";
 @import "./font-awesome";
 @import "./recommends";
 @import "./header";
 @import "./featured";
-
+@import "./user";
+@import "./new";
+@import "./user-sign-up";
+@import "./user-profile";
