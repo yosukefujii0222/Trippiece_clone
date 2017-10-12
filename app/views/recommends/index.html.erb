@@ -1,6 +1,7 @@
-<div class= "home-container">
+<div class= "container">
   <div class= "home-featured-content">
-  <%= render partial: "featured" %>
+    ここに特集の表示
+    リンクの貼られた画像をアニメーションで切り替え
   </div>
 
   <div class= "home-main">
@@ -8,10 +9,7 @@
     <div class= "home-main__container">
       <div class= "home-main__filter">ここで表示の並び替えなどを行う</div>
       <div class= "home-main__recommends-list">
-        <% @recommends.each do |info| %>
-          <%= render partial: "recommend", locals: { info: info }  %>
-        <% end %>
-        <div class="clearfix"></div>
+        <%= render partial: "recommend" %>
       </div>
     </div>
   </div>
