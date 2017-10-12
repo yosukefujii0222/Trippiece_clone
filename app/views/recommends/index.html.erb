@@ -1,4 +1,4 @@
-<div class= "container">
+<div class= "home-container">
   <div class= "home-featured-content">
   <%= render partial: "featured" %>
   </div>
@@ -8,7 +8,10 @@
     <div class= "home-main__container">
       <div class= "home-main__filter">ここで表示の並び替えなどを行う</div>
       <div class= "home-main__recommends-list">
-        <%= render partial: "recommend" %>
+        <% @recommends.each do |info| %>
+          <%= render partial: "recommend", locals: { info: info }  %>
+        <% end %>
+        <div class="clearfix"></div>
       </div>
     </div>
   </div>
