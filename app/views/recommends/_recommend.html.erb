@@ -1,35 +1,29 @@
 <div class= "home-main__recommend">
-  <div class= "home-main__recommend--thumb">画像</div>
-  <div class= "home-main__recommend--description">
-    <div class= "home-main__recommend--description-user">アイコン</div>
-    <div class= "home-main__recommend--description-title">タイトル</div>
-    <div class= "clearfix"></div>
-    <div class= "home-main__recommend--description-tag">タグ</div>
-    <div class= "home-main__recommend--description-fav">Fav</div>
-    <div class= "clearfix"></div>
+  <!-- 画像ブロック -->
+  <div class= "home-main__recommend--thumb">
+    <% if info.images.any? %>
+      <%= image_tag info.image_url %>
+    <% else %>
+      <span>画像が有りません</span>
+    <% end %>
   </div>
-</div>
-
-<div class= "home-main__recommend">
-  <div class= "home-main__recommend--thumb">画像</div>
   <div class= "home-main__recommend--description">
-    <div class= "home-main__recommend--description-user">アイコン</div>
-    <div class= "home-main__recommend--description-title">タイトル</div>
+    <div class= "home-main__recommend--description-user"><%= image_tag info.user.avatar.to_s %></div>
+    <div class= "home-main__recommend--description-title"><%= info.title %></div>
     <div class= "clearfix"></div>
-    <div class= "home-main__recommend--description-tag">タグ</div>
-    <div class= "home-main__recommend--description-fav">Fav</div>
-    <div class= "clearfix"></div>
-  </div>
-</div>
-
-<div class= "home-main__recommend">
-  <div class= "home-main__recommend--thumb">画像</div>
-  <div class= "home-main__recommend--description">
-    <div class= "home-main__recommend--description-user">アイコン</div>
-    <div class= "home-main__recommend--description-title">タイトル</div>
-    <div class= "clearfix"></div>
-    <div class= "home-main__recommend--description-tag">タグ</div>
-    <div class= "home-main__recommend--description-fav">Fav</div>
+    <div class= "home-main__recommend--description-tag">
+      <% info.recotag_list.first(2).each do |t| %>
+        <div class=recotag-list><%= t %></div>
+      <% end %>
+    </div>
+    <div class= "home-main__recommend--description-fav">
+      <i class="fa fa-star"></i>
+      <% if info.favorites.any? %>
+        <span class="recommend-fav-count"><%= info.favorite.count %></span>
+      <% else %>
+        <span class="recommend-fav-count">0</span>
+      <% end %>
+    </div>
     <div class= "clearfix"></div>
   </div>
 </div>

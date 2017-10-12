@@ -1,0 +1,49 @@
+<header class="header-default">
+  <div class="header-default__container">
+    <!-- ここからロゴ -->
+    <div class="header-default-logo">
+      <a class="header-default-logo-icon" href="/">
+        <i class="fa fa-hand-spock-o">めこぴ</i>
+      </a>
+    </div>
+    <!-- ここからナブバー -->
+    <nav class="header-default-nav">
+      <!-- ナブバー/検索ホルダー -->
+      <div class="header-default-searchbox">
+        <form class="header-searchbox" action="/search/" method="GET" autocomplete="off" ng-controller="HeaderSearchboxController">
+          <i class="fa fa-search"></i>
+          <input name="search" type="text" class="header-searchbox__input" placeholder="○○を探そう！">
+        </form>
+      </div>
+      <!-- ナブバー/メニューリスト -->
+      <ul class="header-default-menu">
+        <!-- レコメンド一覧 -->
+        <li class="header-default-menu-item__recommend-list">
+          <a class= "fa fa-th-list" href=""><span>マイリスト</span></a>
+        </li>
+        <!-- メッセージ一覧 -->
+        <li class="header-default-menu-item__message-list">
+          <a class="fa fa-commenting-o" href=""><span>メッセージ</span></a>
+        </li>
+        <!-- 通知一覧 -->
+        <li class="header-default-menu-item__notification-list">
+          <a class="fa fa-bell-o" href=""><span>通知</span></a>
+        </li>
+        <!-- ユーザー機能一覧 -->
+        <li class="header-default-menu-item__user">
+          <%= image_tag  current_user.avatar.url(:thumb) %><span>ユーザー</span>
+          <ul class="user-dropdown">
+            <li class="user-dropdown-list"><a href="/users/<%= current_user.id %>">プロフィール</a></li>
+            <li class="user-dropdown-list"><a href="#">設定</a></li>
+            <li class="user-dropdown-list"><a href="#">ログアウト</a></li>
+            <li class="user-dropdown-list"><a href="#">○○からのお知らせ</a></li>
+            <li class="user-dropdown-list"><a href="#">お問い合わせ・通報</a></li>
+            <li class="user-dropdown-list"><a href="#">ヘルプ</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- ナブバー/新規レコメンド作成ボタン -->
+      <%= link_to "新規作成", "/recommends/new", class: "new-recommend" %>
+    </nav>
+  </div>
+</header>
