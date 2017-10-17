@@ -1,0 +1,181 @@
+.body {
+  background-color: #f1f1f1;
+}
+.title-block {
+  width: 960px;
+}
+//左側ブロック
+.recommend-detail {
+  zoom: 1;
+  width: 960px;
+  margin: 0 auto;
+}
+//左側ブロック
+.recommend-detail-left {
+  display: inline-block;
+  float: left;
+  width: 640px;
+  .main-block {
+    margin: 0;
+    .main-block__info i {
+      color: yellow;
+      text-shadow:
+          0 1px 0 #666,
+          1px 0 0 #666,
+          0 -1px 0 #666,
+          -1px 0 0 #666,
+          -1px -1px 0 #666,
+          1px -1px 0 #666,
+          -1px 1px 0 #666,
+          1px 1px 0 #666
+          ;
+    }
+  }
+}
+.tag {
+  margin-right: 2px;
+  color: white;
+  background-color: #5bc0de;
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+}
+//右側ブロック
+.recommend-detail-right {
+  display: inline-block;
+  width: 280px;
+  margin: 0;
+  float: right;
+}
+//コントロールパネル
+.side-controll-panel {
+  margin: 0 0 20px;
+  border: 1px solid #ccc;
+  background-color: #fdfdfd;
+  padding: 10px;
+  text-align: center;
+}
+.side-share-block {
+  background: #fdfdfd;
+  border: 1px solid #ccc;
+  padding: 10px 0;
+  position: relative;
+  z-index: 100;
+  margin: 0 0 20px;
+  ul.side-share-block__list {
+    width: 150px;
+    height: 40px;
+    margin: auto;
+    padding: 0;
+    zoom: 1;
+    li {
+      float: left;
+      margin: 0 5px;
+      width: 40px;
+      height: 40px;
+      i {
+        font-size: 40px;
+      }
+    }
+  }
+}
+.controll-panel__favo-btn span i {
+  color: yellow;
+  text-shadow:
+      0 1px 0 #666,
+      1px 0 0 #666,
+      0 -1px 0 #666,
+      -1px 0 0 #666,
+      -1px -1px 0 #666,
+      1px -1px 0 #666,
+      -1px 1px 0 #666,
+      1px 1px 0 #666
+      ;
+}
+
+.side-share-block ul.side-share-block__list {
+  li.list_facebook a {
+    color: #3B5998
+  }
+  li.list_twitter a {
+    color: #55acee;
+  }
+  li.list_google a {
+    color: #dd4b39;
+  }
+}
+.side-chat-block {
+  max-height: 460px;
+  border: 1px solid #ccc;
+  background: #fdfdfd;
+  .side-chat-post {
+    height: 130px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    background-color: #fdfdfd;
+    .chat-post-btn input{
+      width: 100%;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: #fcb753;
+      color: #fff;
+      font-weight: 400;
+      text-align: center;
+      border: 1px solid transparent;
+      margin: 10px 0 0;
+    }
+  }
+}
+form#new_comment.new_comment {
+  height: 100%;
+}
+textarea#comment_body.text_content {
+  width: 100%;
+  height: 70px;
+  border: none;
+  font-size: 12px;
+}
+
+// <!-- 上側 -->
+// <div class="controll-panel__main">
+// <p class="controll-panel__p1">ステータス</p>
+// <p class="controll-panel__p2">申込受付前</p>
+// </div>
+// <!-- 下側 -->
+// <div class="controll-panel__favo-btn">
+// <span>
+// <i class="fa fa-star"></i>お気に入り
+// </span>
+// </div>
+// </div>
+//   <!-- SNSシェア -->
+//   <div class="side-share-block">
+//     <ul class="side-share-block__list">
+//     <li class="list_facebook"><i class="fa fa-facebook-official"></i></li>
+//     <li class="list_twitter"><i class="fa fa-twitter-square"></i></li>
+//     <li class="list_google"><i class="fa fa-google-plus-square"></i></li>
+//     </ul>
+//   </div>
+//   <!-- コメント入力と表示欄 -->
+//   <div class="side-chat-block">
+//     <!-- コメント入力のブロック -->
+//     <div class="side-chat-post">
+//       <%= form_for @recommend do |f| %>
+//       コメントを入力
+//         <div class="chat-post-btn">
+//           <%= f.submit "投稿する" %>
+//         </div>
+//       <% end %>
+//     </div>
+//     <!-- コメント表示のブロック -->
+//     <div class="side-chat-main">
+//       ここにチャットを表示。しかも非同期通信。
+//     </div>
+//   </div>
+// </div>

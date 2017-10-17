@@ -27,7 +27,13 @@ class RecommendsController < ApplicationController
   end
 
   def show
-    @recommend = Recommend.find(params[:recommend_id])
+    @recommend = Recommend.find(params[:id])
+    @comment = Comment.new
+    @comments = @recommend.comments.order('created_at ASC')
+    # respond_to do |format|
+    #   format.html
+    #   format.json
+    # end
   end
 
   def edit

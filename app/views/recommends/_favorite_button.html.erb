@@ -1,0 +1,5 @@
+<% if comment.favorite_for current_user %>
+  <%= link_to "Favorite", favorite_path(favorite), method: :delete, remote: true, class: 'btn btn-xs btn-warning' %>
+<% else %>
+  <%= link_to "Favorite", favorites_path(comment_id: comment), method: :post, remote: true, class: 'btn btn-xs btn-default' %>
+<% end %>

@@ -1,0 +1,91 @@
+<div class="recommend-detail">
+  <!-- タイトルブロック -->
+  <div class="title-block">
+    <h1 class="recommend-detail"><%= @recommend.title %></h1>
+  </div>
+  <!-- ここから左側ブロック -->
+  <div class="recommend-detail-left">
+    <!-- メインブロック -->
+    <div class="main-block">
+      <!-- 画像 -->
+      <div class="main-block__image">
+        <!-- スライド１ -->
+        <div  class="image_content">
+          <%= image_tag @recommend.image_url.to_s %>
+        </div>
+      </div>
+      <!-- 情報 -->
+      <div class="main-block__info">
+        <!-- 投稿者 -->
+        <div class="producer">
+          <%= image_tag  @recommend.user.avatar.url(:thumb) %>
+          <span class="producer-name"><%= @recommend.user.nickname %></span>
+        </div>
+        <!-- fav数 -->
+        <div class="fav">
+          <i class="fa fa-star"></i>
+          <span class="fav-count">0</span>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <!-- なぜ？ -->
+      <div class="main-block__why">
+        <div class="tags-area">
+          <% @recommend.recotag_list.each do |recommend_tag| %>
+            <div class="tag"><%= recommend_tag %></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ここから右側ブロック -->
+  <div class="recommend-detail-right">
+    <!-- コントロールパネル -->
+    <div class="side-controll-panel">
+      <!-- 上側 -->
+      <div class="controll-panel__main">
+        <p class="controll-panel__p1">ステータス</p>
+        <p class="controll-panel__p2">申込受付前</p>
+      </div>
+      <!-- 下側 -->
+      <div class="controll-panel__favo-btn">
+        <span>
+          <i class="fa fa-star"></i>お気に入り
+        </span>
+      </div>
+    </div>
+    <!-- SNSシェア -->
+    <div class="side-share-block">
+      <ul class="side-share-block__list">
+        <li class="list_facebook"><a href="" target="_blank" title="Facebook"><i class="fa fa-facebook-official"></i></a></li>
+        <li class="list_twitter"><a href="" target="_blank" title="Twitter"><i class="fa fa-twitter-square"></i></a></li>
+        <li class="list_google"><a href="" target="_blank" title="Google"><i class="fa fa-google-plus-square"></i></a></li>
+      </ul>
+    </div>
+    <!-- コメント入力と表示欄 -->
+    <div class="side-chat-block">
+      <!-- コメント入力のブロック -->
+      <div class="side-chat-post">
+        <%= form_for [@recommend, @comment], url: "#{@recommend.id}/comments" do |f| %>
+          <%= f.hidden_field :recommend_id, value: "#{@recommend.id}" %>
+          <%= f.text_area :body, placeholder: "コメントを入力してください", class: "text_content" %>
+          <div class="chat-post-btn">
+            <%= f.submit "投稿する" %>
+          </div>
+        <% end %>
+      </div>
+      <!-- コメント表示のブロック -->
+      <div class="side-chat-main">
+        <% if @comments.any? %>
+          <% @comments.each do |comment| %>
+            <%= render partial: "comment", locals: {comment: comment} %>
+          <% end %>
+        <% else %>
+          <span>まだコメントはありません</span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>
+
