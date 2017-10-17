@@ -103,7 +103,17 @@ label.upload-btn {
 }
 i.fa.fa-star {
   font-size: 30px;
-  color: #666;
+  color: yellow;
+  text-shadow:
+      0 1px 0 #666,
+      1px 0 0 #666,
+      0 -1px 0 #666,
+      -1px 0 0 #666,
+      -1px -1px 0 #666,
+      1px -1px 0 #666,
+      -1px 1px 0 #666,
+      1px 1px 0 #666
+      ;
 }
 span.fav-count {
   color: #666;
