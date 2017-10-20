@@ -1,0 +1,18 @@
+.side-chat-main {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  background-color: #fdfdfd;
+  font-size: 12px;
+  position: relative;
+  height: 330px;
+  overflow-y: scroll;
+}
+.chat-block {
+  border-bottom: 1px solid #666;
+  .chat-nickname {
+    font-size: 14px;
+  }
+  .chat-create-time {
+    color: #666;
+  }
+}
