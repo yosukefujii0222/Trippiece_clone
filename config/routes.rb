@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :recommends, only: [:index, :new, :create, :show, :edit, :delete] do
     resources :comments, only:[:create]
+    resources :favorites, only: [:create, :destroy]
   end
-  resources :favorites, only: [:create, :destroy]
 end

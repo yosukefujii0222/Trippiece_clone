@@ -8,12 +8,10 @@ class Recommend < ActiveRecord::Base
   acts_as_taggable
   acts_as_ordered_taggable_on :recotags
   belongs_to :user
-  has_many :favorites
-  has_many :users, through: :favorites
+  has_many :favorites, dependent: :destroy
+  def favorite_user(user_id)
+    favorites.find_by(user_id: user_id)
+  end
   mount_uploader :image, ImageUploader
   validates :title, presence: true
-
-  def favorites_for(user)
-    favorites.find_by(user_id: user)
-  end
 end
