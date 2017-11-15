@@ -5,7 +5,7 @@ class FavoritesController < ApplicationController
     @recommends = Recommends.all
   end
   def destroy
-    favorite = Favorite.find_by(user_id: current_user.id, recommend/id: params[:recommend_id])
+    favorite = Favorite.find_by(user_id: current_user.id, recommend_id: params[:recommend_id])
     favorite.destroy
     @favorites = Favorite.where(recommend_id: params[:recommend_id])
     @recommend = Recommend.all
