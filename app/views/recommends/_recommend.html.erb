@@ -19,13 +19,13 @@
     <div class= "home-main__recommend--description-fav">
       <!-- ユーザーが既にお気に入りにしている場合 -->
       <% if info.favorite_user(current_user.id) %>
-        <%= link_to recommend_favorite_path(favorite, recommend_id: info.id), id: 'favorite-link', method: :delete, remote: true do %>
+        <%#= link_to recommend_favorite_path(favorite, recommend_id: info.id), id: 'favorite-link', method: :delete, remote: true do %>
           <i class="fa fa-star"></i>
           <% if info.favorites.any? %>
             <span class="recommend-fav-count"><%= info.fav_count %></span>
           <% else %>
             <span class="recommend-fav-count">0</span>
-          <% end %>
+          <%# end %>
         <% end %>
       <!-- ユーザーがまだお気に入りにしていない場合 -->
       <% else %>
